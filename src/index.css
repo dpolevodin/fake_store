@@ -1,5 +1,21 @@
 body {
   background-color: rgb(202, 200, 200);
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  left: 0;
+  right: 0;
+  background-color: rgb(149, 152, 155);
+  margin-bottom: 30px;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 10px rgb(210, 42, 48);
+
 }
 
 .product {
@@ -13,6 +29,22 @@ body {
   max-width: 30vw;
   margin: 0 auto;
   margin-bottom: 15px;
+  padding: 2rem;
+  flex-direction: column;
+  box-shadow: 2px 2px 100px rgb(90, 88, 88);
+}
+
+.product-modal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin: 15px;
+  background-color: rgb(255, 255, 255);
+  max-width: 30vw;
+  margin: 0 auto;
+  margin: 15px;
   padding: 2rem;
   flex-direction: column;
   box-shadow: 2px 2px 100px rgb(90, 88, 88);
@@ -32,6 +64,7 @@ body {
 }
 
 .product__button {
+  margin-bottom: 15px;
   padding: 1rem;
   text-decoration: solid;
   text-transform: uppercase;
@@ -44,6 +77,10 @@ body {
 
 .button-yellow {
   background-color: rgb(255, 255, 0);
+}
+
+.button-red {
+  background-color: rgb(255, 0, 0);
 }
 
 .loader {
@@ -64,7 +101,7 @@ body {
 
 .modal__window {
   position: fixed;
-  max-width: 40vw;
+  max-width: 100vw;
   max-height: 40vw;
   background-color: #fff;
   top: 50%;
@@ -81,10 +118,40 @@ body {
 
 .add-product {
   position: fixed;
-  top: 0;
+  top: 100px;
   left: 0;
+  width: 180px;
   padding: 1.5rem;
-  margin: 1.5rem;
+  margin: 3rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+}
+
+.main-cart {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  margin: 2rem;
+}
+
+.main-cart__pic {
+  width: 40px;
+  height: 40px;
+}
+
+.main-cart__count {
+  position: absolute;
+  right: -0.5rem;
+  bottom: -0.5rem;
+}
+
+.delete-product {
+  position: fixed;
+  top: 200px;
+  left: 0;
+  width: 180px;
+  padding: 1.5rem;
+  margin: 3rem;
   text-transform: uppercase;
   border-radius: 1rem;
 }
@@ -93,9 +160,10 @@ body {
   opacity: 70%;
 }
 
-.create_product__title {
+.create_product__title, .delete_product-title {
   font-size: 1.5rem;
   padding: 10px;
+  text-align: center;
 }
 
 .create-product__form {
@@ -111,8 +179,24 @@ border-radius: 0.5rem;
 
 .create_product__input {
   padding: 10px;
+  width: 20rem;
 }
 
 .create_product {
   flex-direction: column;
+}
+
+.product_list {
+  display: flex;
+}
+
+.add-to-cart {
+  position: relative;
+  border: 0;
+  background: 0;
+  width: 3rem;
+}
+
+.add-to-cart:hover {
+  opacity: 70%;
 }

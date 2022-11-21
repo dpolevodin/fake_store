@@ -11,6 +11,11 @@ export const useProducts = () => {
     setProducts(prev => [...prev, product])
   }
 
+  const delProduct = (product: IProduct) => {
+    products.splice(products.indexOf(product), 1)
+    setProducts(products)
+  }
+
   async function fetchProds () {
     try {
       setLoading(true)
@@ -29,5 +34,5 @@ useEffect(() => {
   fetchProds()
 }, [])
 
-return {products, loading, error, addProduct}
+return {products, loading, error, addProduct, delProduct}
 }
