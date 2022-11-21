@@ -1,13 +1,118 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(202, 200, 200);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.product {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  background-color: rgb(255, 255, 255);
+  max-width: 30vw;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 2rem;
+  flex-direction: column;
+  box-shadow: 2px 2px 100px rgb(90, 88, 88);
+}
+
+.product__title {
+  margin-bottom: 20px;
+}
+
+.product__description {
+  margin-bottom: 20px;
+}
+
+.product__img {
+  max-width: 10vw;
+  margin-bottom: 20px;
+}
+
+.product__button {
+  padding: 1rem;
+  text-decoration: solid;
+  text-transform: uppercase;
+  border-radius: 15px;
+}
+
+.button-blue {
+  background-color: rgb(49, 152, 236);
+}
+
+.button-yellow {
+  background-color: rgb(255, 255, 0);
+}
+
+.loader {
+  color: red;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.modal__bg {
+  position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(77, 77, 77, 0.8);
+    z-index: 1;
+}
+
+.modal__window {
+  position: fixed;
+  max-width: 40vw;
+  max-height: 40vw;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;                         /* 3 */
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  z-index:2;
+}
+
+.img-modal {
+  height: 40vw;
+  border-radius: 50px;
+}
+
+.add-product {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+}
+
+.add-product:hover {
+  opacity: 70%;
+}
+
+.create_product__title {
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.create-product__form {
+  padding: 10px;
+  margin: 10px;
+}
+
+.create_product__button {
+padding: 10px;
+margin-left: 5px;
+border-radius: 0.5rem;
+}
+
+.create_product__input {
+  padding: 10px;
+}
+
+.create_product {
+  flex-direction: column;
 }

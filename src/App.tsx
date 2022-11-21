@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Product } from './components/product';
+import { useProducts } from './hooks/products';
+import { Error } from './components/Error';
+import { Loader } from './components/Loader';
+import { Modal } from './components/Modal/Modal';
+import { CreateProduct } from './components/Modal/modalContent/CreateProduct';
+import { useState } from 'react';
+import { IProduct } from './models';
 
 function App() {
+  const {loading, error, products, addProduct} = useProducts()
+  const [modal, setModal] = useState(false)
+
+  const createHandler = (product: IProduct) => {
+    setModal(false)
+    addProduct(product)
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {error && <Error error={error}/>}
+      {loading && <Loader /> }
+      {products.map(prod => <Product product={prod} />)}
+      
+      {modal && <Modal onClose={() => setModal(false)}>
+        <CreateProduct onCreate={createHandler}/>
+      </Modal>}
+
+      <button className="add-product button-yellow" onClick={() => setModal(true)}>Add Product</button>
+    </>
   );
 }
 
