@@ -6,7 +6,7 @@ export const useProducts = () => {
   const [products, setProducts] = useState<IProduct[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-
+//test
   const addProduct = (product: IProduct) => {
     setProducts(prev => [...prev, product])
   }
